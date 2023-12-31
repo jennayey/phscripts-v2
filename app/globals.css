@@ -18,20 +18,20 @@
 
 @font-face {
   font-family: 'Baybayin';
-  src: url('../public/fonts/TintangBaybayin.otf');
+  src: url('/fonts/TintangBaybayin.otf');
 }
 
 @font-face {
   font-family: 'Buhid';
-  src: url('../public/fonts/TintangBuhid.otf');
+  src: url('/fonts/TintangBuhid.otf');
 }
 
 @font-face {
   font-family: 'Tagbanwa';
-  src: url('../public/fonts/TintangTagbanwa.otf');
+  src: url('/fonts/TintangTagbanwa.otf');
 }
 
 @font-face {
   font-family: 'Hanunoo';
-  src: url('../public/fonts/TintangHanunuo.otf');
+  src: url('/fonts/TintangHanunuo.otf');
 }
