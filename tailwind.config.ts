@@ -7,6 +7,13 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily:{
+      baybayin: ['Baybayin', 'sans-serif'],
+      buhid: ['Buhid', 'sans-serif'],
+      tagbanwa: ['Tagbanwa', 'sans-serif'],
+      hanunuo: ['Hanunoo', 'sans-serif'],
+
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
