@@ -9,7 +9,7 @@ export default function Home() {
 
   const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(event.target.value);
-    console.log ("CURRENT: " + event.target.value)
+    console.log("CURRENT: " + event.target.value);
     translate(untranslatedText, event.target.value);
   };
 
@@ -364,10 +364,10 @@ export default function Home() {
   });
 
   return (
-    <main>
-      <div className="navbar bg-green-100">
+    <main className="h-dvh flex flex-col">
+      <div className="navbar bg-primary text-white">
         <div className="flex-1">
-          <h4 className="text-green-900 font-bold">PH Scripts V2</h4>
+          <h4 className="text-white font-bold">PH Scripts V2</h4>
         </div>
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
@@ -376,7 +376,7 @@ export default function Home() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
+              className="inline-block w-5 h-5 stroke-current text-white"
             >
               <path
                 strokeLinecap="round"
@@ -388,41 +388,44 @@ export default function Home() {
           </button>
         </div>
       </div>
-
-      <div className="p-5 md:p-0 md:container md:mx-auto">
+      <select
+        className="select select-ghost w-full md:w-fit"
+        defaultValue="baybayin"
+        onChange={changeLanguage}
+      >
+        <option disabled>Select Language</option>
+        <option value={"font-baybayin"}>Tagalog to Baybayin</option>
+        <option value={"font-hanunoo"}>Tagalog to Hanunoo</option>
+        <option value={"font-tagbanwa"}>Tagalog to Tagbanwa</option>
+        <option value={"font-buhid"}>Tagalog to Buhid</option>
+      </select>
+      <div className="flex flex-col grow md:flex-row md:p-0 md:container md:mx-auto md:h-fit md:grow-0 md:overflow-hidden	">
         {/* <h1>{language}</h1> */}
-        <div>I rendered {renderCount.current}</div>
-        <select
-          className="select select-ghost w-full max-w-xs"
-          defaultValue="baybayin"
-          onChange={changeLanguage}
-        >
-          <option disabled>Select Language</option>
-          <option value={"font-baybayin"}>Tagalog to Baybayin</option>
-          <option value={"font-hanunoo"}>Tagalog to Hanunoo</option>
-          <option value={"font-tagbanwa"}>Tagalog to Tagbanwa</option>
-          <option value={"font-buhid"}>Tagalog to Buhid</option>
-        </select>
-        <div className="flex flex-col md:flex-row">
-          <div className="basis-full bg-red-300">
-            <textarea
+        {/* <div>I rendered {renderCount.current}</div> */}
+
+        <div className="md:basis-full md:w-1/2 h-fit md:p-2 md:box-border">
+          <div className="md:border-2 md:rounded-md md:h-80 bg-neutral md:border-neutral-green">
+           
+           <textarea
               id="untranslatedText"
-              className="textarea textarea-bordered w-full"
+              className="textarea h-[20vh] ghost w-full rounded-none text-2xl md:p-5 md:h-full  md:bg-neutral break-words"
               placeholder="Type"
               // value='test'
               onChange={handleText}
             ></textarea>
           </div>
-          <div className="basis-full">
-            <p
+        </div>
+        <div className="grow md:basis-full md:w-1/2 md:p-2 bg-base-100 md:h-full ">
+          <div className="md:border-2 md:rounded-md md:border-neutral-green h-full">
+            <div
               id="translatedText"
-              className={`textarea textarea-bordered w-full ${language}`}
+              className={`textarea w-full h-full text-2xl rounded-none bg-dark-green text-white md:text-primary md:h-full  md:bg-neutral-green break-words ${language}`}
             >
               {translatedText}
-            </p>
+            </div>
           </div>
-          {/* <button onClick={focusThis}>Test</button> */}
         </div>
+        {/* <button onClick={focusThis}>Test</button> */}
       </div>
     </main>
   );
