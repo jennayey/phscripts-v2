@@ -365,14 +365,13 @@ export default function Home() {
   });
 
   return (
-    <main className="h-dvh flex flex-col">
       
-      <div className="flex flex-col gap-y-6 lg:flex-row lg:justify-between lg:gap-x-6 px-8 py-6 xl:container xl:mx-auto">
+      <main className="flex flex-col gap-y-6 lg:flex-row lg:justify-between lg:gap-x-6 px-4 xl:px-8 py-6 xl:container xl:mx-auto">
         {/* <h1>{language}</h1> */}
         {/* <div>I rendered {renderCount.current}</div> */}
 
         {/* Tagalog  text area div starts */}
-        <div className="grow basis-full h-fit lg:min-h-96 p-6 border rounded-t-[16px] rounded-b-[16px] lg:rounded-r-[16px] lg:rounded-bl-[48px] border-b-navy-500">
+        <div className="grow basis-full h-fit lg:min-h-96 p-4 lg:p-6 border rounded-t-[16px] rounded-b-[16px] lg:rounded-r-[16px] lg:rounded-bl-[48px] border-b-navy-500">
           <div className="flex flex-col gap-y-6">
             <div className="text-sm rounded-[12px] text-white bg-b-navy-500 max-w-fit py-2 px-4">
 Tagalog
@@ -380,7 +379,7 @@ Tagalog
             <textarea
               id="untranslatedText"
               className="textarea h-[20vh] bg-transparent break-words text-lg text-white"
-              placeholder="Type"
+              placeholder="Start typing"
               // value='test'
               onChange={handleText}
             ></textarea>
@@ -389,7 +388,7 @@ Tagalog
         {/* Tagalog  text area div ends */}
 
         {/* Translated text div starts */}
-        <div className="grow basis-full h-full min-h-48 p-6 rounded-t-[16px] rounded-b-[16px] lg:rounded-l-[16px] lg:rounded-br-[48px] bg-b-navy-500">
+        <div className="grow basis-full content-stretch min-h-48 p-4 lg:p-6 rounded-t-[16px] rounded-b-[16px] lg:rounded-l-[16px] lg:rounded-br-[48px] bg-b-navy-500">
           <div className="flex flex-col  gap-y-6">
             <div className="flex flex-row justify-between">
               <Select
@@ -429,7 +428,6 @@ Tagalog
         {/* Translated text div ends */}
 
         {/* <button onClick={focusThis}>Test</button> */}
-      </div>
-    </main>
+      </main>
   );
 }
