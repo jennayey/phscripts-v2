@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: 'Hanunoo';
-  src: url('/fonts/TintangHanunuo.otf');
+  src: url('/public/fonts/TintangHanunuo.otf');
 }
 
 .textarea:focus, .select:focus{

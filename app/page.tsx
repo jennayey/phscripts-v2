@@ -1,6 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { Select, SelectItem, Button } from "@nextui-org/react";
+
 export default function Home() {
   const renderCount = useRef(1);
   const [language, setLanguage] = useState("font-baybayin");
@@ -365,66 +366,68 @@ export default function Home() {
 
   return (
     <main className="h-dvh flex flex-col">
-      <div className="navbar bg-primary text-white">
-        <div className="flex-1">
-          <h4 className="text-white font-bold">PH Scripts V2</h4>
-        </div>
-        <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            {" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <select
-        className="select select-ghost w-full md:w-fit"
-        defaultValue="baybayin"
-        onChange={changeLanguage}
-      >
-        <option disabled>Select Language</option>
-        <option value={"font-baybayin"}>Tagalog to Baybayin</option>
-        <option value={"font-hanunoo"}>Tagalog to Hanunoo</option>
-        <option value={"font-tagbanwa"}>Tagalog to Tagbanwa</option>
-        <option value={"font-buhid"}>Tagalog to Buhid</option>
-      </select>
-      <div className="flex flex-col grow md:flex-row md:p-0 md:container md:mx-auto md:h-fit md:grow-0 md:overflow-hidden	">
+      
+      <div className="flex flex-col gap-y-6 lg:flex-row lg:justify-between lg:gap-x-6 px-8 py-6 xl:container xl:mx-auto">
         {/* <h1>{language}</h1> */}
         {/* <div>I rendered {renderCount.current}</div> */}
 
-        <div className="md:basis-full md:w-1/2 h-fit md:p-2 md:box-border">
-          <div className="md:border-2 md:rounded-md md:h-80 bg-neutral md:border-neutral-green">
-           
-           <textarea
+        {/* Tagalog  text area div starts */}
+        <div className="grow basis-full h-fit lg:min-h-96 p-6 border rounded-t-[16px] rounded-b-[16px] lg:rounded-r-[16px] lg:rounded-bl-[48px] border-b-navy-500">
+          <div className="flex flex-col gap-y-6">
+            <div className="text-sm rounded-[12px] text-white bg-b-navy-500 max-w-fit py-2 px-4">
+Tagalog
+            </div>
+            <textarea
               id="untranslatedText"
-              className="textarea h-[20vh] ghost w-full rounded-none text-2xl md:p-5 md:h-full  md:bg-neutral break-words"
+              className="textarea h-[20vh] bg-transparent break-words text-lg text-white"
               placeholder="Type"
               // value='test'
               onChange={handleText}
             ></textarea>
           </div>
         </div>
-        <div className="grow md:basis-full md:w-1/2 md:p-2 bg-base-100 md:h-full ">
-          <div className="md:border-2 md:rounded-md md:border-neutral-green h-full">
+        {/* Tagalog  text area div ends */}
+
+        {/* Translated text div starts */}
+        <div className="grow basis-full h-full min-h-48 p-6 rounded-t-[16px] rounded-b-[16px] lg:rounded-l-[16px] lg:rounded-br-[48px] bg-b-navy-500">
+          <div className="flex flex-col  gap-y-6">
+            <div className="flex flex-row justify-between">
+              <Select
+                fullWidth={false}
+                defaultSelectedKeys={["font-baybayin"]}
+                color={"primary"}
+                onChange={changeLanguage}
+                className="max-w-32"
+              >
+                <SelectItem key="font-baybayin">Baybayin</SelectItem>
+                <SelectItem key="font-hanunoo">Hanunuo</SelectItem>
+                <SelectItem key="font-tagbanwa">Tagbanwa</SelectItem>
+                <SelectItem key="font-buhid">Buhid</SelectItem>
+              </Select>
+              <Button className="size-fit font-semibold" color="default">Copy</Button>
+            </div>
+
+            {/* <select
+              className="select select-ghost w-full md:w-fit pr-"
+              defaultValue="baybayin"
+              onChange={changeLanguage}
+            >
+              <option disabled>Select Language</option>
+              <option value={"font-baybayin"}>Baybayin</option>
+              <option value={"font-hanunoo"}>Hanunoo</option>
+              <option value={"font-tagbanwa"}>Tagbanwa</option>
+              <option value={"font-buhid"}>Buhid</option>
+            </select> */}
             <div
               id="translatedText"
-              className={`textarea w-full h-full text-2xl rounded-none bg-dark-green text-white md:text-primary md:h-full  md:bg-neutral-green break-words ${language}`}
+              className={`textarea w-full h-full text-xl text-white md:h-full break-words ${language}`}
             >
               {translatedText}
             </div>
           </div>
         </div>
+        {/* Translated text div ends */}
+
         {/* <button onClick={focusThis}>Test</button> */}
       </div>
     </main>
