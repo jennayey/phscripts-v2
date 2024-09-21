@@ -6,12 +6,11 @@ import { Link, Button } from "@nextui-org/react";
 import PHSTLogo from "../../public/images/phscripts-translator-logo-white.svg";
 export default function header() {
   return (
-    <header className="flex flex-row justify-between px-5 xl:px-8 py-6 gap-x-6 align-middle xl:container xl:mx-auto xs:h-2">
+    <header className="flex flex-row justify-between px-5 xl:px-8 py-6 gap-x-6 items-center xl:container xl:mx-auto xs:h-2">
       <div className="shrink">
         <Image
           priority
           height={50}
-          sizes="(max-width: 360px) 50vw, 20vw"
           src={PHSTLogo}
           alt="Philippine Scripts Translator Logo"
         />

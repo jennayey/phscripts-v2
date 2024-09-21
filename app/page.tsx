@@ -390,7 +390,7 @@ Tagalog
         {/* Translated text div starts */}
         <div className="grow basis-full content-stretch min-h-48 p-4 lg:p-6 rounded-t-[16px] rounded-b-[16px] lg:rounded-l-[16px] lg:rounded-br-[48px] bg-b-navy-500">
           <div className="flex flex-col  gap-y-6">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-start">
               <Select
                 fullWidth={false}
                 defaultSelectedKeys={["font-baybayin"]}
@@ -403,7 +403,7 @@ Tagalog
                 <SelectItem key="font-tagbanwa">Tagbanwa</SelectItem>
                 <SelectItem key="font-buhid">Buhid</SelectItem>
               </Select>
-              <Button className="size-fit font-semibold" color="default">Copy</Button>
+              {/* <Button className="size-fit font-semibold" color="default">Copy</Button> */}
             </div>
 
             {/* <select
