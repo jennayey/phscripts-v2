@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/50047186-ae2c-4abd-82b8-c39be6731fcf/deploy-status)](https://app.netlify.com/sites/philippinescriptstranslator/deploys)
+# Philippine-Scripts-Translator V2
+Philippine Script Translator
+
+This is an updated version of the original translator for Philippine Ancient Scripts that are included in the unicode charts 
+Rebuilt in NextJS and Tailwind with an updated branding.
 
 ## Getting Started
 
