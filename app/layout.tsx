@@ -9,7 +9,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Philippine Scripts Translator",
+  title: "Philippine Scripts Translator | Tagalog to Baybayin, Hanunoo, Buhid & Tagbawna Translator",
   description: "Translate tagalog words and sentences to the Baybayin, Hanunoo, Buhid and Tagbanwa with the Philippine Scripts Translator",
 };
 
